@@ -8,13 +8,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+
 #include "main.h"
 #include "complex.h"
 
 
 int main(void)
 {
-	_COMPLEX_t i, j, l, m, n;
+	_COMPLEX_t i, j, l;
 
 	i.real = 100; i.img = 200;
 	j.real = 200; j.img = 100;
