@@ -42,11 +42,11 @@ int ConnerFreqDipoleEffect(int *wd, int lamda)
  * @param 	m		진동계의 질량
  * @return	공명 주파수 값
  */
-double FreqDiaphragm(double s, double m)
+double SpkResonanceFreq(double s, double m)
 {
 	double f_s = 0.0;
 
-	f_s = ( (1 / ((double)TWO_PI)) * sqrt(s/m, 2) );
+	f_s = ( (1 / ((double)TWO_PI)) * sqrt(s/m) );
 
 
 	return f_s;
@@ -59,11 +59,11 @@ double FreqDiaphragm(double s, double m)
  * @param 	m_v		Voice Coil의 질량
  * @return	최고공명주파수 값
  */
-double FreqMaxDiaphragm(double s_top, double m_d, double m_v)
+double SpkResonanceMaxFreq(double s_top, double m_d, double m_v)
 {
 	double f_h = 0.0;
 
-	f_h = ( (1 / ((double)TWO_PI)) * sqrt((s_top * ((1/m_d) + (1/m_v))), 2) );
+	f_h = ( (1 / ((double)TWO_PI)) * sqrt( (s_top * ((1/m_d) + (1/m_v))) ) );
 
 	return f_h;
 }
