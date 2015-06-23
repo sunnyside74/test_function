@@ -63,7 +63,27 @@ double SpkResonanceMaxFreq(double s_top, double m_d, double m_v)
 {
 	double f_h = 0.0;
 
-	f_h = ( (1 / ((double)TWO_PI)) * sqrt( (s_top * ((1/m_d) + (1/m_v))) ) );
+	f_h = ( (1 / ((double)TWO_PI)) * sqrt( (s_top * ( (1/m_d) + (1/m_v) ) ) ) );
 
 	return f_h;
+}
+
+/**
+ * @brief	원뿔기둥형태의 스피커 콘의 표면적 구하는 함수
+ * @param 	rad_upper		원뿔기둥의 상단 원의 반지름
+ * @param 	rad_bottom		원뿔기둥의 하단 원의 반지름
+ * @param 	height			원뿔기둥의 높이
+ * @return	표면적 계산 값
+ */
+double SpkDiaphragmSurfaceArea(double rad_upper, double rad_bottom, double height)
+{
+	double area = 0.0;
+	double r1 = rad_bottom;
+	double r2 = rad_upper;
+	double h = height;
+
+	area = M_PI * ( pow(r1,2) + ( r1 * sqrt( pow(r1,2) + pow( ( r1*h /(r1-r2) ), 2 ) ) )
+					+ (r2 * sqrt( pow(r2,2) + pow( ( r2*h /(r1-r2) ), 2 ) ) ) );
+
+	return area;
 }
