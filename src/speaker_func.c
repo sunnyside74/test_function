@@ -69,7 +69,8 @@ double SpkResonanceMaxFreq(double s_top, double m_d, double m_v)
 }
 
 /**
- * @brief	원뿔기둥형태의 스피커 콘의 표면적 구하는 함수
+ * @brief	원뿔기둥형태의 스피커 콘의 표면적 구하는 함수\n
+ * 				기하학적 해석으로 구현함.
  * @param 	rad_upper		원뿔기둥의 상단 원의 반지름
  * @param 	rad_bottom		원뿔기둥의 하단 원의 반지름
  * @param 	height			원뿔기둥의 높이
